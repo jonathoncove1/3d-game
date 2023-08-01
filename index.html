@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+  <style>
+    body { margin:0; }
+    #game-canvas {
+      margin: 0;
+      background: #0c4a6e;
+    }
+    #game-hud {
+      position: absolute;
+      color: #ffffff;
+      padding: 40px;
+      font-size: 3rem;
+      font-family: sans-serif;
+    }
+  </style>
+
+  <script type="module" src="/main.js"></script>
+</head>
+
+  <body>
+    <div id="game-hud"  >
+      <label>Score:<span id="hud-score"></span></label>
+      <br />
+      <label>Highscore:<span id="hud-highscore"></span></label>
+    </div>
+  </body>
+</html>
