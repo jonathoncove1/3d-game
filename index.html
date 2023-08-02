@@ -7,12 +7,38 @@
       margin: 0;
       background: #0c4a6e;
     }
-    #game-hud {
+    #game-hud, #game-controls, #mobile-controls {
       position: absolute;
       color: #ffffff;
       padding: 40px;
       font-size: 3rem;
       font-family: sans-serif;
+    }
+    #game-controls {
+      right:6rem;
+    }
+    #game-controls label { text-decoration: underline; }
+    #mobile-controls {
+      display: grid;
+      gap: 1px;
+      grid-template-columns: repeat(3, 1fr);
+      left: 0; 
+      right: 0; 
+      margin-left: auto; 
+      margin-right: auto; 
+      width: 50%;
+    }
+    #mobile-controls a {
+      padding: 10px;
+    }
+    .a img {
+      transform: rotate(270deg);
+    }
+    .s img {
+      transform: rotate(180deg);
+    }
+    .d img {
+      transform: rotate(90deg);
     }
   </style>
 
@@ -24,6 +50,25 @@
       <label>Score:<span id="hud-score"></span></label>
       <br />
       <label>Highscore:<span id="hud-highscore"></span></label>
+    </div>
+    <div id="game-controls"  >
+      <label>Controls</label>
+      <br />
+      <small>WASD: Move</small>
+      <br />
+      <small>Space: Jump</small>
+    </div>
+    <div id="mobile-controls">
+        <a href="#"></a>
+        <a href="#" class="w"><img src="./arrow.svg" /></a>
+        <a href="#"></a>
+        <a href="#" class="a"><img src="./arrow.svg" /></a>
+        <a href="#"></a>        
+        <a href="#" class="d"><img src="./arrow.svg" /></a>
+        <a href="#"></a>
+        <a href="#" class="s"><img src="./arrow.svg" /></a>
+        <a href="#"></a>
+      </div>
     </div>
   </body>
 </html>

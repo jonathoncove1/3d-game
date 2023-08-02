@@ -88,7 +88,7 @@ import * as THREE from 'three'
       window.cancelAnimationFrame(animationId); 
       if(score > highscore){ highscore = score;  }
       score = 0;
-      alert('u died')      
+      //alert('u died')      
       Restart()      
     }
 
