@@ -12,6 +12,10 @@ import * as THREE from 'three'
       highscore: document.getElementById('hud-highscore'),
     }
 
+    let mobileControls = {
+      a: document.querySelector('#mobile-controls .a'),
+    }
+
     const scene = new THREE.Scene()
     const camera = new THREE.PerspectiveCamera(
       75,
@@ -170,6 +174,10 @@ import * as THREE from 'three'
       d: { pressed: false },
       space: { pressed: false },
     }
+
+    mobileControls.a.addEventListener("mouseenter", (e) => {
+      keys.a.pressed = true;
+    });
 
     window.addEventListener('keydown', (event) =>{
       //console.log(event)
