@@ -13,7 +13,10 @@ import * as THREE from 'three'
     }
 
     let mobileControls = {
+      w: document.querySelector('#mobile-controls .w'),
       a: document.querySelector('#mobile-controls .a'),
+      s: document.querySelector('#mobile-controls .s'),
+      d: document.querySelector('#mobile-controls .d'),
     }
 
     const scene = new THREE.Scene()
@@ -175,9 +178,42 @@ import * as THREE from 'three'
       space: { pressed: false },
     }
 
-    mobileControls.a.addEventListener("mouseenter", (e) => {
+    mobileControls.w.addEventListener("touchstart", (e) => {
+      e.preventDefault();
+      keys.w.pressed = true;
+    });
+    mobileControls.w.addEventListener("touchend", (e) => {
+      e.preventDefault();
+      keys.w.pressed = false;
+    });
+
+    mobileControls.a.addEventListener("touchstart", (e) => {
+      e.preventDefault();
       keys.a.pressed = true;
     });
+    mobileControls.a.addEventListener("touchend", (e) => {
+      e.preventDefault();
+      keys.a.pressed = false;
+    });
+
+    mobileControls.s.addEventListener("touchstart", (e) => {
+      e.preventDefault();
+      keys.s.pressed = true;
+    });
+    mobileControls.s.addEventListener("touchend", (e) => {
+      e.preventDefault();
+      keys.s.pressed = false;
+    });
+
+    mobileControls.d.addEventListener("touchstart", (e) => {
+      e.preventDefault();
+      keys.d.pressed = true;
+    });
+    mobileControls.d.addEventListener("touchend", (e) => {
+      e.preventDefault();
+      keys.d.pressed = false;
+    });
+
 
     window.addEventListener('keydown', (event) =>{
       //console.log(event)
