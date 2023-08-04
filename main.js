@@ -17,6 +17,7 @@ import * as THREE from 'three'
       a: document.querySelector('#mobile-controls .a'),
       s: document.querySelector('#mobile-controls .s'),
       d: document.querySelector('#mobile-controls .d'),
+      space: document.querySelector('#mobile-controls .space'),
     }
 
     const scene = new THREE.Scene()
@@ -212,6 +213,15 @@ import * as THREE from 'three'
     mobileControls.d.addEventListener("touchend", (e) => {
       e.preventDefault();
       keys.d.pressed = false;
+    });
+
+    mobileControls.space.addEventListener("touchstart", (e) => {
+      e.preventDefault();
+      keys.space.pressed = true;
+    });
+    mobileControls.space.addEventListener("touchend", (e) => {
+      e.preventDefault();
+      keys.space.pressed = false;
     });
 
 
