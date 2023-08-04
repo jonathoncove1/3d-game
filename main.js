@@ -12,6 +12,14 @@ import * as THREE from 'three'
       highscore: document.getElementById('hud-highscore'),
     }
 
+    let mobileControls = {
+      w: document.querySelector('#mobile-controls .w'),
+      a: document.querySelector('#mobile-controls .a'),
+      s: document.querySelector('#mobile-controls .s'),
+      d: document.querySelector('#mobile-controls .d'),
+      space: document.querySelector('#mobile-controls .space'),
+    }
+
     const scene = new THREE.Scene()
     const camera = new THREE.PerspectiveCamera(
       75,
@@ -88,7 +96,7 @@ import * as THREE from 'three'
       window.cancelAnimationFrame(animationId); 
       if(score > highscore){ highscore = score;  }
       score = 0;
-      alert('u died')      
+      //alert('u died')      
       Restart()      
     }
 
@@ -170,6 +178,52 @@ import * as THREE from 'three'
       d: { pressed: false },
       space: { pressed: false },
     }
+
+    mobileControls.w.addEventListener("touchstart", (e) => {
+      e.preventDefault();
+      keys.w.pressed = true;
+    });
+    mobileControls.w.addEventListener("touchend", (e) => {
+      e.preventDefault();
+      keys.w.pressed = false;
+    });
+
+    mobileControls.a.addEventListener("touchstart", (e) => {
+      e.preventDefault();
+      keys.a.pressed = true;
+    });
+    mobileControls.a.addEventListener("touchend", (e) => {
+      e.preventDefault();
+      keys.a.pressed = false;
+    });
+
+    mobileControls.s.addEventListener("touchstart", (e) => {
+      e.preventDefault();
+      keys.s.pressed = true;
+    });
+    mobileControls.s.addEventListener("touchend", (e) => {
+      e.preventDefault();
+      keys.s.pressed = false;
+    });
+
+    mobileControls.d.addEventListener("touchstart", (e) => {
+      e.preventDefault();
+      keys.d.pressed = true;
+    });
+    mobileControls.d.addEventListener("touchend", (e) => {
+      e.preventDefault();
+      keys.d.pressed = false;
+    });
+
+    mobileControls.space.addEventListener("touchstart", (e) => {
+      e.preventDefault();
+      keys.space.pressed = true;
+    });
+    mobileControls.space.addEventListener("touchend", (e) => {
+      e.preventDefault();
+      keys.space.pressed = false;
+    });
+
 
     window.addEventListener('keydown', (event) =>{
       //console.log(event)
